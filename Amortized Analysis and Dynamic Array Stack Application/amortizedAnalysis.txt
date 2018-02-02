@@ -1,0 +1,26 @@
+Name: Laura Tran
+Class: CS 261 Data Structures (Winter 2018)
+Date: 29 JAN 2018
+
+Assignment 2: 
+Part 2: Amortized Analysis of the Dynamic Array (written)
+
+1. How many cost units are spent in the entire process of performing 32 consecutive push operations on an empty array which starts out at capacity 8, assuming that the array will double in capacity each time a new item is added to an already full dynamic array? As N (ie. the number of pushes) grows large, under this strategy for resizing, what is the big-oh complexity for a push?
+
+When size (number of elements) > capacity (allocated array) - 8+8=16, 16+16=32 --> 8+16=24 pushes
+
+32 elements pushed + 24 resizing pushed = 56 push
+
+O(1) for push without resize, O(n) for resizing and copying. Most of the time O(1) but not always so amortized with +.
+
+[answer a] 56 total time cost units
+[answer b] O(1)+
+
+
+2. How many cost units are spent in the entire process of performing 32 consecutive push operations on an empty array which starts out at capacity 8, assuming that the array will grow by a constant 2 spaces each time a new item is added to an already full dynamic array? As N (ie. the number of pushes) grows large, under this strategy for resizing, what is the big-oh complexity for a push?
+
+Start with size 8 array with O(1). After size 8, O(n) because resizing and copying every element add. 
+8+10+12+14+16+18+20+22+24+26+28+30+32 = 260 pushes
+
+[answer a] 260 total time cost units
+[answer b] O(n)
